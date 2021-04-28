@@ -1,0 +1,149 @@
+<html lang="gr">
+
+
+<HEAD>
+
+<div style="background-image: url('back4.jpg');">
+	
+</style>
+
+<script language="JavaScript">
+
+
+//Insert scooter questions number of questions
+var numQues = 5;
+
+ //Insert number of choices in each question
+var numChoi = 4;
+
+// Insert number of questions displayed in answer area
+var answers = new Array(5);
+
+//Insert answers to questions
+answers[0] = "Σταθερές";
+answers[1] = "Η αλλαγή είναι ανεπιθύμητη";
+answers[2] = "Ανανέωση";
+answers[3] = "Βαθύτερη αλλά και βραδύτερη κατανόηση των απαιτήσεων του προιόντος";
+answers[4] = "Σχεδίαση γραφικών";
+
+function getScore(form) {
+	showCorrectAnswers();
+
+  var score = 0;
+  var currElt;
+  var currSelection;
+  for (i=0; i<numQues; i++) {
+    currElt = i*numChoi;
+    for (j=0; j<numChoi; j++) {
+      currSelection = form.elements[currElt + j];
+      if (currSelection.checked) {
+        if (currSelection.value == answers[i]) {
+          score++;
+		break;
+        }
+      }
+    }				
+  }
+  score = Math.round(score/numQues*100);
+  form.percentage.value = score + "%";
+  var correctAnswers = "";
+  for (i=1; i<=numQues; i++) {
+    correctAnswers += i + ". " + answers[i-1] + "\r\n";
+  }
+  
+  form.solutions.value = correctAnswers;
+}
+
+function showCorrectAnswers() {
+	var q1Inputs = document.querySelectorAll('.q1-inputs input');
+	var correctAnswer = document.querySelector('.q1-inputs span');
+	var correct = correctAnswer.textContent;
+	q1Inputs.forEach(function(element) {
+		if (element.checked) {
+			if (element.value !== correct) {
+				correctAnswer.classList.remove('hidden');
+			} else {
+				correctAnswer.classList.add('hidden');
+			}
+		}
+	});
+}
+
+</script>
+
+</HEAD>
+
+<!-- STEP TWO: Copy this code into the BODY of your HTML document  -->
+
+<BODY>
+
+
+<h3>ΤΕΣΤ γνώσεων</h3>
+
+<form name="quiz">
+
+<b>1. Ποιο από τα παρακάτω δεν είναι βασικό χαρακτηριστικό των ευέλικτων μεθόδων (από τον ορισμό των ευέλικτων μεθόδων)</b>
+<ul class="q1-inputs" style="margin-top: 1pt">
+  <li><input type="radio" name="q1" value="Σταθερές">Σταθερές</li>
+  <li><input type="radio" name="q1" value="Επαυξητικές">Επαυξητικές</li>
+  <li><input type="radio" name="q1" value="Αυτο-διοργανούμενες">Αυτο-διοργανούμενες</li>
+  <li><input type="radio" name="q1" value="Προκύπτουσες Αρχές των ευέλικτων μεθόδων">Προκύπτουσες Αρχές των ευέλικτων μεθόδων</li>
+  <span class="hidden" style="color:green;">Να απαντάτε με προσοχή</span> 
+</ul>
+
+
+<b>2. Ποιο από τα παρακάτω δεν αποτελεί βασική αρχή της διακήρυξης των ευέλικτων μεθόδων (Agile Manifesto); </b>
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q2" value="Συχνή παράδοση λογισμικού">Συχνή παράδοση λογισμικού</li>
+  <li><input type="radio" name="q2" value="Καθημερινή συνεργασία με πελάτες">Καθημερινή συνεργασία με πελάτες</li>
+  <li><input type="radio" name="q2" value="Η αλλαγή είναι ανεπιθύμητη">Η αλλαγή είναι ανεπιθύμητη</li>
+   <li><input type="radio" name="q2" value="Εξασφάλιση σταθερού ρυθμού ανάπτυξης">Εξασφάλιση σταθερού ρυθμού ανάπτυξης</li>
+   
+</ul>
+
+
+
+<b>3. Ποιος από τους παρακάτω δεν είναι τρόπος διαχειρισμού εξαιρέσεων;</b>
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q3" value="Ανανέωση">Ανανέωση</li>
+  <li><input type="radio" name="q3" value="Επανάληψη">Επανάληψη</li>
+  <li><input type="radio" name="q3" value="Διόρθωση">Διόρθωση</li>
+  <li><input type="radio" name="q3" value="Αναφορά">Αναφορά</li>
+  
+</ul>
+
+
+
+<b>4. Ποιο από τα παρακάτω δεν ανοίκει στα οφέλη της χρήσης του «ελέγχου πριν την κωδικοποίηση» σε σχέση με την αντιμετώπιση των παραδοσιακών μοντέλων για έλεγχο μετά την ανάπτυξη;</b>
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q4" value="Βαθύτερη αλλά και βραδύτερη κατανόηση των απαιτήσεων του προιόντος">Βαθύτερη αλλά και βραδύτερη κατανόηση των απαιτήσεων του προιόντος</li>
+  <li><input type="radio" name="q4" value="Σίγουρη καταγραφή τεστ για κάθε απαιτηση">Σίγουρη καταγραφή τεστ για κάθε απαιτηση</li>
+  <li><input type="radio" name="q4" value="Σίγουρη αποτελεσματικόττα των τεστ">Σίγουρη αποτελεσματικόττα των τεστ</li>
+  <li><input type="radio" name="q4" value="Η προσοχή των προγραμματιστών διατηρείται εστιασμένη στην ποιότητα του προιόντος">Η προσοχή των προγραμματιστών διατηρείται εστιασμένη στην ποιότητα του προιόντος</li>
+</ul>
+
+<b>5.Ποιο από τα παρακάτω δε συμπεριλαμβάνεται στα στάδια ανάπτυξης εφαρμογών;</b>
+
+<ul style="margin-top: 1pt">
+  <li><input type="radio" name="q5" value="Σχεδίαση συστήματος">Σχεδίαση συστήματος</li>
+  <li><input type="radio" name="q5" value="Σχεδίαση προγραμμάτων">Σχεδίαση προγραμμάτων</li>
+  <li><input type="radio" name="q5" value="Σχεδίαση γραφικών">Σχεδίαση γραφικών</li>
+  <li><input type="radio" name="q5" value="Ελεγχος συστήματος">Ελεγχος συστήματος</li>
+  
+  
+</ul>
+
+
+
+<input type="button" value="Get score" onClick="getScore(this.form)">
+<input type="reset" value="Clear answers">
+<p> Αποτέλεσμα = <strong><input class="bgclr" type="text" size="5" name="percentage" disabled></strong><br><br>
+Σωστές Απαντήσεις:<br>
+<textarea class="bgclr" name="solutions" wrap="virtual" rows="10" cols="100" disabled>
+</textarea>
+</form>
+
+</html>
