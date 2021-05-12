@@ -4,209 +4,170 @@
 
 <HEAD>
 
-<div style="background-image: url('back4.jpg');">
-	
+<style>
+body {
+  background-color: linen;
+}
+
+h2 {
+  color: maroon;
+}  	
+.correct {
+  color: green
+}
+
+.error {
+  color: red
+}
 </style>
 
 <script language="JavaScript">
 
-
-//Insert scooter questions number of questions
-var numQues = 11;
-
- //Insert number of choices in each question
-var numChoi = 4;
-
-// Insert number of questions displayed in answer area
-var answers = new Array(11);
-
-//Insert answers to questions
-answers[0] = "Δεν είναι κατάλληλο για μικρά έργα";
-answers[1] = "Σπειροειδές μοντέλο";
-answers[2] = "Είναι κατάλληλη για έργα που ΔΕΝ έχουν καλά καθορισμένες απαιτήσεις";
-answers[3] = "Το μοντέλο RUP";
-answers[4] = "Αποθετήριο (Repository)";
-answers[5] = "Το κόστος απόκτησης των εργαλείων";
-answers[6] = "Για οποιοδήποτε λογισμικό το οποίο αναπτύσσεται με οποιαδήποτε μεθοδολογία";
-answers[7] = "Με την χρήση εργαλείων CASE";
-answers[8] = "Αποφυγή παραπόνων από τον πελάτη";
-answers[9] = "Έλεγχος κώδικα";
-answers[10] = "Όλα τα παραπάνω";
-
-function getScore(form) {
-	showCorrectAnswers();
-
-  var score = 0;
-  var currElt;
-  var currSelection;
-  for (i=0; i<numQues; i++) {
-    currElt = i*numChoi;
-    for (j=0; j<numChoi; j++) {
-      currSelection = form.elements[currElt + j];
-      if (currSelection.checked) {
-        if (currSelection.value == answers[i]) {
-          score++;
-		break;
-        }
-      }
-    }				
-  }
-  score = Math.round(score/numQues*100);
-  form.percentage.value = score + "%";
-  var correctAnswers = "";
-  for (i=1; i<=numQues; i++) {
-    correctAnswers += i + ". " + answers[i-1] + "\r\n";
-  }
-  
-  form.solutions.value = correctAnswers;
-}
-
-function showCorrectAnswers() {
-	var q1Inputs = document.querySelectorAll('.q1-inputs input');
-	var correctAnswer = document.querySelector('.q1-inputs span');
-	var correct = correctAnswer.textContent;
-	q1Inputs.forEach(function(element) {
-		if (element.checked) {
-			if (element.value !== correct) {
-				correctAnswer.classList.remove('hidden');
-			} else {
-				correctAnswer.classList.add('hidden');
-			}
-		}
-	});
-}
-
+var answers = ["Δεν είναι κατάλληλο για μικρά έργα",
+               "Σπειροειδές μοντέλο",
+			   "Είναι κατάλληλη για έργα που ΔΕΝ έχουν καλά καθορισμένες απαιτήσεις",
+			   "Το μοντέλο RUP",
+			   "Αποθετήριο (Repository)",
+			   "Το κόστος απόκτησης των εργαλείων",
+			   "Για οποιοδήποτε λογισμικό το οποίο αναπτύσσεται με οποιαδήποτε μεθοδολογία",
+			   "Με την χρήση εργαλείων CASE",
+			   "Αποφυγή παραπόνων από τον πελάτη",
+			   "Έλεγχος κώδικα",
+			   "Όλα τα παραπάνω",];
+var rads, quiz; // need to be set after load
+window.addEventListener("load",function() { // when page loads
+  quiz = document.getElementById("quiz");
+  rads = quiz.querySelectorAll("input[type=radio]"); // all radios in the quiz
+  document.getElementById("scoreButton").addEventListener("click",function(e) { // on click of scoreme
+    var score = 0;
+    for (var i=0;i<rads.length;i++) { // loop over all radios in the form
+      var rad = rads[i];
+      var idx = rad.name.substring(1)-1; //remove the q from the name - JS arrays start at 0
+      var checked = rad.checked;
+      var correct = rad.value==answers[idx];
+      
+      if (correct) {
+        rad.closest("label").classList.toggle("correct");
+        if (checked) score +=4;
+      }  
+      else if (checked) {
+        
+        rad.closest("label").classList.toggle("error")
+      }  
+    }
+    var scoreper = Math.round(score/rads.length*100);
+    document.querySelector("#percentage").innerHTML = scoreper + "%";
+    quiz.mark.value = score;
+  });  
+});
 </script>
-
 </HEAD>
 
-
-<BODY>
-
-
-<h3>ΤΕΣΤ γνώσεων</h3>
-
-<form name="quiz">
-
-<b>1. Ποιο είναι το μειονέκτημα του σπειροειδούς μοντέλου;</b>
-<ul class="q1-inputs" style="margin-top: 1pt">
-  <li><input type="radio" name="q1" value="Δεν είναι κατάλληλο για μικρά έργα">Δεν είναι κατάλληλο για μικρά έργα</li>
-  <li><input type="radio" name="q1" value="Το μεγάλο μέρος που καταλαμβάνει η διαχείριση ρίσκου">Το μεγάλο μέρος που καταλαμβάνει η διαχείριση ρίσκου</li>
-  <li><input type="radio" name="q1" value="Ότι μπορεί να προστεθεί λειτουργικότητα εκ των υστέρων ">Ότι μπορεί να προστεθεί λειτουργικότητα εκ των υστέρων </li>
-  <li><input type="radio" name="q1" value="Κανένα από τα παραπάνω ">Κανένα από τα παραπάνω </li>
-  <span class="hidden" style="color:green;">Να απαντάτε με προσοχή</span> 
-</ul>
-
-
-<b>2. Σε ποιο από τα ακόλουθα μοντέλα λαμβάνεται υπόψη ο παράγοντας του ρίσκου; </b>
-
-<ul class="q1-inputs" style="margin-top: 1pt">
-  <li><input type="radio" name="q2" value="Μοντέλο καταρράκτη">Μοντέλο καταρράκτη</li>
-  <li><input type="radio" name="q2" value="Μοντέλο πρωτοτύπων">Όλα τα παραπάνω</li>
-  <li><input type="radio" name="q2" value="Μοντέλο επαυξήσεων">Μοντέλο επαυξήσεων</li>
-   <li><input type="radio" name="q2" value="Σπειροειδές μοντέλο">Σπειροειδές μοντέλο</li>
-   
-</ul>
-
-
-
-<b>3. Τι ισχύει από τα ακόλουθα για τη διεργασία ανάπτυξης λογισμικού με την μέθοδο των πρωτοτύπων;</b>
-
-<ul class="q1-inputs" style="margin-top: 1pt">
-  <li><input type="radio" name="q3" value="Είναι κατάλληλη για έργα που υλοποιούνται από μεγάλες ομάδες ανάπτυξης">Είναι κατάλληλη για έργα που υλοποιούνται από μεγάλες ομάδες ανάπτυξης</li>
-  <li><input type="radio" name="q3" value="Είναι κατάλληλη για έργα που ΔΕΝ έχουν καλά καθορισμένες απαιτήσεις">Είναι κατάλληλη για έργα που ΔΕΝ έχουν καλά καθορισμένες απαιτήσεις</li>
-  <li><input type="radio" name="q3" value="Είναι κατάλληλη για έργα που έχουν καλά καθορισμένες απαιτήσεις">Είναι κατάλληλη για έργα που έχουν καλά καθορισμένες απαιτήσεις</li>
-  <li><input type="radio" name="q3" value="Κανένα από τα παραπάνω">Κανένα από τα παραπάνω</li>
-  
-</ul>
-
-
-
-<b>4. Ποιο από τα ακόλουθα μοντέλα υποστηρίζει τη διαδικασία προδιαγραφής των απαιτήσεων;</b>
-
-<ul class="q1-inputs" style="margin-top: 1pt">
-  <li><input type="radio" name="q4" value="Τα εξελικτικά μοντέλα">Τα εξελικτικά μοντέλα</li>
-  <li><input type="radio" name="q4" value="Το μοντέλο καταρράκτη">Το μοντέλο καταρράκτη</li>
-  <li><input type="radio" name="q4" value="Το μοντέλο RUP">Το μοντέλο RUP</li>
-  <li><input type="radio" name="q4" value="Το πρώτο και το τρίτο">Το πρώτο και το τρίτο</li>
-</ul>
-
-<b>5.Ποιο εργαλείο CASE αποθηκεύει όλες τις αλλαγές και τις πληροφορίες υλοποίησης ενός έργου λογισμικού από την έναρξή του έως και την συντήρησή του;</b>
-
-<ul class="q1-inputs" style="margin-top: 1pt">
-  <li><input type="radio" name="q5" value="Βάση δεδομένων">Βάση δεδομένων</li>
-  <li><input type="radio" name="q5" value="Αποθετήριο (Repository)">Αποθετήριο (Repository)</li>
-  <li><input type="radio" name="q5" value="Καταχωρητές">Καταχωρητές</li>
-  <li><input type="radio" name="q5" value="Κανένα από τα παραπάνω">Κανένα από τα παραπάνω</li>
-  </ul>
-  
-<b>6.Ποιο από τα ακόλουθα αποτελεί μειονέκτημα των εργαλείων CASE;</b>
-
-<ul class="q1-inputs" style="margin-top: 1pt">
-  <li><input type="radio" name="q6" value="H προτυποποίηση διαγραμμάτων και σημειολογίας">H προτυποποίηση διαγραμμάτων και σημειολογίας</li>
-  <li><input type="radio" name="q6" value="Η μειωμένη επικοινωνία των μελών της ομάδας ανάπτυξης">Η μειωμένη επικοινωνία των μελών της ομάδας ανάπτυξης</li>
-  <li><input type="radio" name="q6" value="Το κόστος απόκτησης των εργαλείων">Το κόστος απόκτησης των εργαλείων</li>
-  <li><input type="radio" name="q6" value="H μείωση του χρόνου υλοποίησης και της προσπάθειας της ομάδας ανάπτυξης">H μείωση του χρόνου υλοποίησης και της προσπάθειας της ομάδας ανάπτυξης</li>  
-  
-</ul>
-
-<b>7.Τα εργαλεία CASE μπορούν να χρησιμοποιηθούν:</b>
-
-<ul class="q1-inputs" style="margin-top: 1pt">
-  <li><input type="radio" name="q7" value="Για την ανάπτυξη τηλεπικοινωνιακού λογισμικού">Για την ανάπτυξη τηλεπικοινωνιακού λογισμικού</li>
-  <li><input type="radio" name="q7" value="Για την ανάπτυξη αντικειμενοστρεφούς λογισμικού">Για την ανάπτυξη αντικειμενοστρεφούς λογισμικού</li>
-  <li><input type="radio" name="q7" value="την ανάπτυξη λογισμικού με την RUP">την ανάπτυξη λογισμικού με την RUP</li>
-  <li><input type="radio" name="q7" value="Για οποιοδήποτε λογισμικό το οποίο αναπτύσσεται με οποιαδήποτε μεθοδολογία">Για οποιοδήποτε λογισμικό το οποίο αναπτύσσεται με οποιαδήποτε μεθοδολογία</li>  
-  
-</ul>
-
-<b>8.Η επιτάχυνση της διαδικασίας ανάπτυξης λογισμικού μπορεί να επιτευχθεί:</b>
-
-<ul class="q1-inputs" style="margin-top: 1pt">
-  <li><input type="radio" name="q8" value="Μέσω της αντικειμενοστρεφούς σχεδίασης">Μέσω της αντικειμενοστρεφούς σχεδίασης</li>
-  <li><input type="radio" name="q8" value="Με την υιοθέτηση ενός μοντέλου διεργασίας ανάπτυξης λογισμικού">Με την υιοθέτηση ενός μοντέλου διεργασίας ανάπτυξης λογισμικού</li>
-  <li><input type="radio" name="q8" value="Με την χρήση εργαλείων CASE">Με την χρήση εργαλείων CASE</li>
-  <li><input type="radio" name="q8" value="Με την προσθήκη επιπλέον μελών στην ομάδα ανάπτυξης λογισμικού">Με την προσθήκη επιπλέον μελών στην ομάδα ανάπτυξης λογισμικού</li>  
-  
-</ul>
-
-<b>9.Ποιο από τα ακόλουθα δεν είναι αντικείμενο της διαχείρισης έργων λογισμικού;</b>
-
-<ul class="q1-inputs" style="margin-top: 1pt">
-  <li><input type="radio" name="q9" value="Διατήρηση του κόστους εντός Π/Υ">Διατήρηση του κόστους εντός Π/Υ</li>
-  <li><input type="radio" name="q9" value="Παράδοση του έργου εντός της ημερομηνίας που συμφωνήθηκε με τον πελάτη">Παράδοση του έργου εντός της ημερομηνίας που συμφωνήθηκε με τον πελάτη</li>
-  <li><input type="radio" name="q9" value="Εξασφάλιση ότι η ομάδα ανάπτυξης είναι παραγωγική και δουλεύει ομαδικά">Εξασφάλιση ότι η ομάδα ανάπτυξης είναι παραγωγική και δουλεύει ομαδικά</li>
-  <li><input type="radio" name="q9" value="Αποφυγή παραπόνων από τον πελάτη">Αποφυγή παραπόνων από τον πελάτη</li>  
-  
-</ul>
-
-<b>10.Ποιο από τα ακόλουθα δεν θεωρείται ρίσκο κατά την ανάπτυξη έργων λογισμικού;</b>
-
-<ul class="q1-inputs" style="margin-top: 1pt">
-  <li><input type="radio" name="q10" value="Έλεγχος κώδικα">Έλεγχος κώδικα</li>
-  <li><input type="radio" name="q10" value="Αργοπορία στον καθορισμό απαιτήσεων">Αργοπορία στον καθορισμό απαιτήσεων</li>
-  <li><input type="radio" name="q10" value="Ανταγωνισμός από παρόμοια προϊόντα">Ανταγωνισμός από παρόμοια προϊόντα</li>
-  <li><input type="radio" name="q10" value="Αλλαγές στο προσωπικό">Αλλαγές στο προσωπικό</li>  
-  
-</ul>
-
-<b>11.Ένας projectmanager κατά τον κύκλο ζωής λογισμικού είναι υπεύθυνος για:</b>
-
-<ul class="q1-inputs" style="margin-top: 1pt">
-  <li><input type="radio" name="q6" value="Την διαχείριση ρίσκου των  έργων">Την διαχείριση ρίσκου των  έργων</li>
-  <li><input type="radio" name="q6" value="Την διαχείριση πόρων">Την διαχείριση πόρων</li>
-  <li><input type="radio" name="q6" value="Την παρακολούθηση της πορείας του έργου">Την παρακολούθηση της πορείας του έργου</li>
-  <li><input type="radio" name="q6" value="Όλα τα παραπάνω">Όλα τα παραπάνω</li>  
-  
-</ul>
-
-
-<input type="button" value="Get score" onClick="getScore(this.form)">
-<input type="reset" value="Clear answers">
-<p> Αποτέλεσμα = <strong><input class="bgclr" type="text" size="5" name="percentage" disabled></strong><br><br>
-Σωστές Απαντήσεις:<br>
-<textarea class="bgclr" name="solutions" wrap="virtual" rows="10" cols="100" disabled>
-</textarea>
+<body>
+<title>Quiz Questions And Answers</title>
+<div class="header">
+  <h1>ΤΕΧΝΟΛΟΓΙΑ ΛΟΓΙΣΜΙΚΟΥ</h1>
+  <h2><u>ΤΕΣΤ 1ου Κεφαλαίου</u></h2>
+</div>
+<form id="quiz">
+  <div class="questions">
+    
+      <b>1. Ποιο είναι το μειονέκτημα του σπειροειδούς μοντέλου;</b> 
+	  <ul class="q1-inputs" style="margin-top: 1pt">
+      <label><input type="radio" name="q1" value="Δεν είναι κατάλληλο για μικρά έργα" />Δεν είναι κατάλληλο για μικρά έργα </label></br>
+      <label><input type="radio" name="q1" value="Το μεγάλο μέρος που καταλαμβάνει η διαχείριση ρίσκου" />Το μεγάλο μέρος που καταλαμβάνει η διαχείριση ρίσκου</label></br>
+      <label><input type="radio" name="q1" value="Ότι μπορεί να προστεθεί λειτουργικότητα εκ των υστέρων" />Ότι μπορεί να προστεθεί λειτουργικότητα εκ των υστέρων</label></br>
+      <label><input type="radio" name="q1" value="Κανένα από τα παραπάνω" />Κανένα από τα παραπάνω </label></br>
+	  </ul>
+    <hr>
+    <b>2. Σε ποιο από τα ακόλουθα μοντέλα λαμβάνεται υπόψη ο παράγοντας του ρίσκου; </b>
+	  <ul class="q1-inputs" style="margin-top: 1pt">
+      <label><input type="radio" name="q2" value="Μοντέλο καταρράκτη" />Μοντέλο καταρράκτη </label></br>
+      <label><input type="radio" name="q2" value="Μοντέλο πρωτοτύπων" />Μοντέλο πρωτοτύπων</label></br>
+      <label><input type="radio" name="q2" value="Μοντέλο επαυξήσεων"/> Μοντέλο επαυξήσεων</label></br>
+      <label><input type="radio" name="q2" value="Σπειροειδές μοντέλο" />Σπειροειδές μοντέλο</label></br>
+	  </ul>
+    <hr>
+    <b>3. Τι ισχύει από τα ακόλουθα για τη διεργασία ανάπτυξης λογισμικού με την μέθοδο των πρωτοτύπων;</b>
+	  <ul class="q1-inputs" style="margin-top: 1pt">
+      <label><input type="radio" name="q3" value="Είναι κατάλληλη για έργα που υλοποιούνται από μεγάλες ομάδες ανάπτυξης" />Είναι κατάλληλη για έργα που υλοποιούνται από μεγάλες ομάδες ανάπτυξης</label></br>
+      <label><input type="radio" name="q3" value="Είναι κατάλληλη για έργα που ΔΕΝ έχουν καλά καθορισμένες απαιτήσεις" />Είναι κατάλληλη για έργα που ΔΕΝ έχουν καλά καθορισμένες απαιτήσεις</label></br>
+      <label><input type="radio" name="q3" value="Είναι κατάλληλη για έργα που έχουν καλά καθορισμένες απαιτήσεις"/>Είναι κατάλληλη για έργα που έχουν καλά καθορισμένες απαιτήσεις</label></br>
+      <label><input type="radio" name="q3" value="Κανένα από τα παραπάνω" />Κανένα από τα παραπάνω</label></br>
+	  </ul>
+	<hr>
+	<b>4. Ποιο από τα ακόλουθα μοντέλα υποστηρίζει τη διαδικασία προδιαγραφής των απαιτήσεων;</b>
+	  <ul class="q1-inputs" style="margin-top: 1pt">
+      <label><input type="radio" name="q4" value="Τα εξελικτικά μοντέλα" />Τα εξελικτικά μοντέλα</label></br>
+      <label><input type="radio" name="q4" value="Το μοντέλο καταρράκτη" />Το μοντέλο καταρράκτη</label></br>
+      <label><input type="radio" name="q4" value="Το μοντέλο RUP"/>Το μοντέλο RUP</label></br>
+      <label><input type="radio" name="q4" value="Το πρώτο και το τρίτο" />Το πρώτο και το τρίτο</label></br>
+	  </ul>
+    <hr>
+	<b>5.Ποιο εργαλείο CASE αποθηκεύει όλες τις αλλαγές και τις πληροφορίες υλοποίησης ενός έργου λογισμικού από την έναρξή του έως και την συντήρησή του;</b>
+	  <ul class="q1-inputs" style="margin-top: 1pt">
+      <label><input type="radio" name="q5" value="Βάση δεδομένων" />Βάση δεδομένων</label></br>
+      <label><input type="radio" name="q5" value="Αποθετήριο (Repository)" />Αποθετήριο (Repository)</label></br>
+      <label><input type="radio" name="q5" value="Καταχωρητές"/>Καταχωρητές</label></br>
+      <label><input type="radio" name="q5" value="Κανένα από τα παραπάνω" />Κανένα από τα παραπάνω</label></br>
+	  </ul>
+    <hr>
+	<b>6.Ποιο από τα ακόλουθα αποτελεί μειονέκτημα των εργαλείων CASE;</b>
+	  <ul class="q1-inputs" style="margin-top: 1pt">
+      <label><input type="radio" name="q6" value="H προτυποποίηση διαγραμμάτων και σημειολογίας" />H προτυποποίηση διαγραμμάτων και σημειολογίας</label></br>
+      <label><input type="radio" name="q6" value="Η μειωμένη επικοινωνία των μελών της ομάδας ανάπτυξης" />Η μειωμένη επικοινωνία των μελών της ομάδας ανάπτυξης</label></br>
+      <label><input type="radio" name="q6" value="Το κόστος απόκτησης των εργαλείων"/>Το κόστος απόκτησης των εργαλείων</label></br>
+      <label><input type="radio" name="q6" value="H μείωση του χρόνου υλοποίησης και της προσπάθειας της ομάδας ανάπτυξης" />H μείωση του χρόνου υλοποίησης και της προσπάθειας της ομάδας ανάπτυξης</label></br>
+	  </ul>
+    <hr>
+    <b>7.Τα εργαλεία CASE μπορούν να χρησιμοποιηθούν:</b>
+	  <ul class="q1-inputs" style="margin-top: 1pt">
+      <label><input type="radio" name="q7" value="Για την ανάπτυξη τηλεπικοινωνιακού λογισμικού" />Για την ανάπτυξη τηλεπικοινωνιακού λογισμικού</label></br>
+      <label><input type="radio" name="q7" value="Για την ανάπτυξη αντικειμενοστρεφούς λογισμικού" />Για την ανάπτυξη αντικειμενοστρεφούς λογισμικού</label></br>
+      <label><input type="radio" name="q7" value="Την ανάπτυξη λογισμικού με την RUP"/>Την ανάπτυξη λογισμικού με την RUP</label></br>
+      <label><input type="radio" name="q7" value="Για οποιοδήποτε λογισμικό το οποίο αναπτύσσεται με οποιαδήποτε μεθοδολογία" />Για οποιοδήποτε λογισμικό το οποίο αναπτύσσεται με οποιαδήποτε μεθοδολογία</label></br>
+	  </ul>
+    <hr>
+	<b>8.Η επιτάχυνση της διαδικασίας ανάπτυξης λογισμικού μπορεί να επιτευχθεί:</b>
+	  <ul class="q1-inputs" style="margin-top: 1pt">
+      <label><input type="radio" name="q8" value="Μέσω της αντικειμενοστρεφούς σχεδίασης" />Μέσω της αντικειμενοστρεφούς σχεδίασης</label></br>
+      <label><input type="radio" name="q8" value="Με την υιοθέτηση ενός μοντέλου διεργασίας ανάπτυξης λογισμικού" />Με την υιοθέτηση ενός μοντέλου διεργασίας ανάπτυξης λογισμικού</label></br>
+      <label><input type="radio" name="q8" value="Με την χρήση εργαλείων CASE"/>Με την χρήση εργαλείων CASE</label></br>
+      <label><input type="radio" name="q8" value="Με την προσθήκη επιπλέον μελών στην ομάδα ανάπτυξης λογισμικού" />Με την προσθήκη επιπλέον μελών στην ομάδα ανάπτυξης λογισμικού</label></br>
+	  </ul>
+    <hr>
+	<b>9.Ποιο από τα ακόλουθα δεν είναι αντικείμενο της διαχείρισης έργων λογισμικού;</b>
+	  <ul class="q1-inputs" style="margin-top: 1pt">
+      <label><input type="radio" name="q9" value="Διατήρηση του κόστους εντός Π/Υ" />Διατήρηση του κόστους εντός Π/Υ</label></br>
+      <label><input type="radio" name="q9" value="Παράδοση του έργου εντός της ημερομηνίας που συμφωνήθηκε με τον πελάτη" />Παράδοση του έργου εντός της ημερομηνίας που συμφωνήθηκε με τον πελάτη</label></br>
+      <label><input type="radio" name="q9" value="Εξασφάλιση ότι η ομάδα ανάπτυξης είναι παραγωγική και δουλεύει ομαδικά"/>Εξασφάλιση ότι η ομάδα ανάπτυξης είναι παραγωγική και δουλεύει ομαδικά</label></br>
+      <label><input type="radio" name="q9" value="Αποφυγή παραπόνων από τον πελάτη" />Αποφυγή παραπόνων από τον πελάτη</label></br>
+	  </ul>
+    <hr>
+	 <b>10.Ποιο από τα ακόλουθα δεν θεωρείται ρίσκο κατά την ανάπτυξη έργων λογισμικού;</b>
+	  <ul class="q1-inputs" style="margin-top: 1pt">
+      <label><input type="radio" name="q10" value="Έλεγχος κώδικα" />Έλεγχος κώδικα</label></br>
+      <label><input type="radio" name="q10" value="Αργοπορία στον καθορισμό απαιτήσεων" />Αργοπορία στον καθορισμό απαιτήσεων</label></br>
+      <label><input type="radio" name="q10" value="Ανταγωνισμός από παρόμοια προϊόντα"/>Ανταγωνισμός από παρόμοια προϊόντα</label></br>
+      <label><input type="radio" name="q10" value="Αλλαγές στο προσωπικό" />Αλλαγές στο προσωπικό</label></br>
+	  </ul>
+    <hr>
+	<b>11.Ένας project manager κατά τον κύκλο ζωής λογισμικού είναι υπεύθυνος για:</b>
+	  <ul class="q1-inputs" style="margin-top: 1pt">
+      <label><input type="radio" name="q11" value="Την διαχείριση ρίσκου των έργων" />Την διαχείριση ρίσκου των έργων</label></br>
+      <label><input type="radio" name="q11" value="Την διαχείριση πόρων" />Την διαχείριση πόρων</label></br>
+      <label><input type="radio" name="q11" value="Την παρακολούθηση της πορείας του έργου"/>Την παρακολούθηση της πορείας του έργου</label></br>
+      <label><input type="radio" name="q11" value="Όλα τα παραπάνω" />Όλα τα παραπάνω</label></br>
+	  </ul>
+    <hr>
+    <p>
+      <input type="button" value="Καταχώρηση Απαντήσεων" id="scoreButton">
+      <input type="reset" value="Καθαρισμός Επιλογών"><br/> 
+      <p> <strong> <h3> Αποτέλεσμα = <span id="percentage"></span> </strong> </h3> </p>
+	  
+    <p>
+  </div>
 </form>
+</body>
 
 </html>
