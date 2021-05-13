@@ -3,20 +3,64 @@
 <html>
 <head>
 <style>
-my{
-zoom: 67%;
+html {zoom: 63%;}
+
+body
+{
 }
+.left
+{
+   width: 100px;
+   height: 100px;
+   transition: .5s;
+   float:left;
+   box-shadow: -5px 5px 0 rgba(255,255,255,.5);
+   cursor: pointer;
+   position: fixed;
+   bottom: 650px;
+   left: 620px;
+}
+.right
+{
+   width: 100px;
+   height: 100px;
+   transition: .5s;
+   float:right;
+   box-shadow: -5px 5px 0 rgba(255,255,255,.5);
+   cursor: pointer;
+   position: fixed;
+   bottom: 650px;
+   right: 620px;
+}
+.left
+{
+   transform: rotate(45deg);
+ 
+   }
+.right
+{
+   transform: rotate(225deg);
+   
+}
+.left: hover,
+.right: hover
+{
+   box-shadow: -2px 2px 0 rgba (255, 255, 255, 1);
+}
+
 </style>
   <meta HTTP-EQUIV=CONTENT-TYPE CONTENT="text/html; charset=utf-8">
-  <title>Eksofyllo</title>
+  <title>Εξώφυλλο</title>
 </head>
 <body text="#FFFFFF" bgcolor="#000000" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF">
+<div class ="left"></div>
+<a href="img1.html"> <div class ="right"></div>
 <center>
-Πρώτη σελίδα Πίσω <a href="img1.html">Συνέχεια</a> <a href="img51.html">Τελευταία σελίδα</a> <a href="index.html">Επισκόπηση</a> <a href="text0.html">Κείμενο</a></center><br>
-<center><img src="img0.png" alt="" USEMAP="#map0"></center>
+<a href="img0.html"> <h2> Πρώτη σελίδα - <a href="img1.html"> Επόμενη σελίδα -</a> <a href="img630.html"> Τελευταία σελίδα -</a> <a href="index.html"> Πίνακας Περιεχομένων</a></center><br>
+<center><img src="img0.png" alt="" USEMAP="#map0"></center> </h2>
 <map name="map0">
-<area shape="rect" alt="" coords="438,1269,572,1403" href="https://ece.uowm.gr/">
-<area shape="rect" alt="" coords="418,29,587,198" href="https://www.uowm.gr/">
+<area shape="rect" title="ΤΜΠΤ" alt="" coords="438,1269,572,1403" href="https://ece.uowm.gr/">
+<area shape="rect" title="ΠΔΜ" alt="" coords="418,29,587,198" href="https://www.uowm.gr/">
 </map>
 </body>
 </html>
