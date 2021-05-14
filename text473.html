@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+     "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+<head>
+  <meta HTTP-EQUIV=CONTENT-TYPE CONTENT="text/html; charset=utf-8">
+  <title>Διαφάνεια 474</title>
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#000080" vlink="#0000CC" alink="#000080">
+<center>
+<a href="text0.html">Πρώτη σελίδα</a> <a href="text472.html">Πίσω</a> <a href="text474.html">Συνέχεια</a> <a href="text630.html">Τελευταία σελίδα</a> <a href="Case%20Study_4%20-%20Αντιγραφή%202.html">Επισκόπηση</a> <a href="img473.html">Εικόνα</a></center><br>
+<h1></h1>
+<p>public void addReservation(Reservation r) {</p>
+<p>		reservations.add(r);</p>
+<p>	}</p>
+<p>	public boolean available(Period p) {</p>
+<p>		Enumeration e = reservations.elements();</p>
+<p>		while (e.hasMoreElements()) {</p>
+<p>			Reservation r = (Reservation) e.nextElement();</p>
+<p>			if (r.overlaps(p)) {</p>
+<p>				return false;</p>
+<p>			}</p>
+<p>		}</p>
+<p>		return true;</p>
+<p>	}</p>
+<p>	public String getName() {</p>
+<p>	return name;</p>
+<p>	}</p>
+<p>	abstract public int getRoomType();</p>
+<p>}</p>
+<p>Η κλάση Room (2)</p>
+</body>
+</html>

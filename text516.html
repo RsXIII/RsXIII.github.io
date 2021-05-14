@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+     "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+<head>
+  <meta HTTP-EQUIV=CONTENT-TYPE CONTENT="text/html; charset=utf-8">
+  <title>Διαφάνεια 517</title>
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#000080" vlink="#0000CC" alink="#000080">
+<center>
+<a href="text0.html">Πρώτη σελίδα</a> <a href="text515.html">Πίσω</a> <a href="text517.html">Συνέχεια</a> <a href="text630.html">Τελευταία σελίδα</a> <a href="Case%20Study_4%20-%20Αντιγραφή%202.html">Επισκόπηση</a> <a href="img516.html">Εικόνα</a></center><br>
+<h1></h1>
+<p><i><font color="#000D28">Η λειτουργία <b>draw</b> <u>χρησιμοποιεί έναν επαναλήπτη</u> (Iterator) για <u>να διατρέξει</u> όλα τα στοιχεία του διανύσματος <b>components</b>, και <u>να καλέσει</u> μέσω αυτού τη λειτουργία <b>draw</b> του κάθε αντικειμένου που περιλαμβάνεται:</i></font></p>
+<p>void Circuit::draw()</p>
+<p>{</p>
+<p>	cout &lt;&lt;&quot;Circuit &quot;&lt;&lt;identifier&lt;&lt; &quot; is being drawn&quot; &lt;&lt; endl;</p>
+<p>	std::vector&lt;Component*&gt;::iterator i;</p>
+<p>	for(i=components.begin(); i!=components.end(); i++)</p>
+<p>		(*i)-&gt;draw();</p>
+<p>}</p>
+<p>Composite (Σύνθετο)</p>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+     "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+<head>
+  <meta HTTP-EQUIV=CONTENT-TYPE CONTENT="text/html; charset=utf-8">
+  <title>Διαφάνεια 516</title>
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#000080" vlink="#0000CC" alink="#000080">
+<center>
+<a href="text0.html">Πρώτη σελίδα</a> <a href="text514.html">Πίσω</a> <a href="text516.html">Συνέχεια</a> <a href="text630.html">Τελευταία σελίδα</a> <a href="Case%20Study_4%20-%20Αντιγραφή%202.html">Επισκόπηση</a> <a href="img515.html">Εικόνα</a></center><br>
+<h1></h1>
+<p><font color="#000D28">Η κλάση Circuit είναι μία περικλείουσα κλάση η οποία είναι δυνατόν να περιέχει αντικείμενα:</font></p>
+<p><font color="#000D28"></font></p>
+<p><font color="#000D28">→<i> πρωταρχικών κλάσεων (π.χ. ένα κύκλωμα που αποτελείται             από πύλες),</i></font></p>
+<p><font color="#000D28">→ <i>άλλων σύνθετων κλάσεων (π.χ. ένα κύκλωμα αποτελείται               από άλλα κυκλώματα)</i></font></p>
+<p><font color="#000D28">→ <i>αντικείμενα και των δύο κατηγοριών (ένα κύκλωμα που                 αποτελείται από πύλες και άλλα κυκλώματα).</i></font></p>
+<p><font color="#000D28"></font></p>
+<p><font color="#000D28">Για το λόγο αυτό, <u>μία από τις ιδιότητες <b>υλοποιεί</b> έναν περιέχοντα (container), όπως ένα διάνυσμα (vector), ουρά (queue), διπλά συνδεδεμένη λίστα (list), στοίβα (stack)</u> κ.ο.κ, που περιλαμβάνονται στην πρότυπη βιβλιοθήκη της C++ (STL):</font></p>
+<p>class Circuit : public Component {</p>
+<p>public:</p>
+<p>	Circuit(string text);</p>
+<p>	virtual void draw();</p>
+<p>	virtual void add(Component*);</p>
+<p>	virtual void remove(Component*);</p>
+<p>private:</p>
+<p>	vector&lt;Component*&gt; components;</p>
+<p>};</p>
+<p>Composite (Σύνθετο)</p>
+</body>
+</html>

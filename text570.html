@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+     "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+<head>
+  <meta HTTP-EQUIV=CONTENT-TYPE CONTENT="text/html; charset=utf-8">
+  <title>Διαφάνεια 571</title>
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#000080" vlink="#0000CC" alink="#000080">
+<center>
+<a href="text0.html">Πρώτη σελίδα</a> <a href="text569.html">Πίσω</a> <a href="text571.html">Συνέχεια</a> <a href="text630.html">Τελευταία σελίδα</a> <a href="Case%20Study_4%20-%20Αντιγραφή%202.html">Επισκόπηση</a> <a href="img570.html">Εικόνα</a></center><br>
+<h1></h1>
+<p><i><font color="#0B001C">Οι παρατηρητές καταχωρούν τον εαυτό τους καλώντας την attach του υποκειμένου (public void attach (Observer o)).</i></font></p>
+<p><i><font color="#0B001C"></i></font></p>
+<p><i><font color="#0B001C">Αν ο παρατηρητής χρειάζεται περισσότερη πληροφορία, την &quot;<b>αντλεί</b>&quot; από το υποκείμενο.</i></font></p>
+<p>class HexObserver extends Observer {</p>
+<p>	private Timer subj;</p>
+<p>	public HexObserver( Timer s ) {</p>
+<p>		subj = s; subj.attach( this );</p>
+<p><b>			//Οι παρατηρητές καταχωρούν τον εαυτό τους</b></p>
+<p>	}</p>
+<p>	public void update() {</p>
+<p>	System.out.print(&quot; &quot;+Integer.toHexString(subj.getState()) );</p>
+<p>	}	 <b>//Οι παρατηρητές αντλούν πληροφορία</b></p>
+<p>}</p>
+<p><b>Observer (Παρατηρητής)</b></p>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+     "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+<head>
+  <meta HTTP-EQUIV=CONTENT-TYPE CONTENT="text/html; charset=utf-8">
+  <title>Διαφάνεια 472</title>
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#000080" vlink="#0000CC" alink="#000080">
+<center>
+<a href="text0.html">Πρώτη σελίδα</a> <a href="text470.html">Πίσω</a> <a href="text472.html">Συνέχεια</a> <a href="text630.html">Τελευταία σελίδα</a> <a href="Case%20Study_4%20-%20Αντιγραφή%202.html">Επισκόπηση</a> <a href="img471.html">Εικόνα</a></center><br>
+<h1></h1>
+<p><b>Η κλάση Period</b></p>
+<p>import java.util.Date;</p>
+<p>public class Period {</p>
+<p>	private Date startDate; private Date endDate;</p>
+<p>	public Period(Date startDate, Date endDate) {</p>
+<p>		this.startDate = startDate;</p>
+<p>		this.endDate = endDate;</p>
+<p>	}</p>
+<p>public Date getStartDate() { return startDate; }</p>
+<p>public Date getEndDate() { return endDate; }</p>
+<p>public boolean overlaps(Period p) {</p>
+<p>	Date pStartD = p.getStartDate();</p>
+<p>	Date pEndD = p.getEndDate();</p>
+<p>	if ((pStartD.compareTo(startDate)&gt;=0 &amp;&amp;</p>
+<p>					pStartD.compareTo(endDate)&lt;=0) ||</p>
+<p>			(pEndD.compareTo(startDate)&gt;=0 &amp;&amp;                                            pEndD.compareTo(endDate)&lt;=0))</p>
+<p>		{</p>
+<p>	 		 return true;</p>
+<p>		}</p>
+<p>	return false;</p>
+<p>	}</p>
+<p>}</p>
+</body>
+</html>

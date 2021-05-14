@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+     "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+<head>
+  <meta HTTP-EQUIV=CONTENT-TYPE CONTENT="text/html; charset=utf-8">
+  <title>Διαφάνεια 552</title>
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#000080" vlink="#0000CC" alink="#000080">
+<center>
+<a href="text0.html">Πρώτη σελίδα</a> <a href="text550.html">Πίσω</a> <a href="text552.html">Συνέχεια</a> <a href="text630.html">Τελευταία σελίδα</a> <a href="Case%20Study_4%20-%20Αντιγραφή%202.html">Επισκόπηση</a> <a href="img551.html">Εικόνα</a></center><br>
+<h1></h1>
+<p><b><font color="#001020">Lazy Initialization</b>: <i>Η τιμή που επιστρέφει η μέθοδος, δεν</i></font></p>
+<p><i><font color="#001020">δημιουργείται μέχρι την πρώτη κλήση της. Αν επομένως ένα</i></font></p>
+<p><i><font color="#001020">μοναδιαίο αντικείμενο δεν χρησιμοποιηθεί, δεν δημιουργείται.</i></font></p>
+<p><i><font color="#001020"></i></font></p>
+<p><u><font color="#001020">Στο παρακάτω πρόγραμμα, οι δύο εντολές <b>printf</b> επιστρέφουν την ίδια διεύθυνση για τους δείκτες A και A1.</u></font></p>
+<p>int main() {</p>
+<p>	Accumulator* A;</p>
+<p>	A = Accumulator::getInstance();</p>
+<p>	Accumulator* A1;</p>
+<p>	A1 = Accumulator::getInstance();</p>
+<p>	printf(&quot;A address: %p\n&quot;, A);</p>
+<p>	printf(&quot;A1 address: %p\n&quot;, A1);</p>
+<p>return 0; }</p>
+<p><b>Singleton (Μοναδιαίο)</b></p>
+</body>
+</html>

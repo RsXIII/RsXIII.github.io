@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+     "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+<head>
+  <meta HTTP-EQUIV=CONTENT-TYPE CONTENT="text/html; charset=utf-8">
+  <title>Διαφάνεια 473</title>
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#000080" vlink="#0000CC" alink="#000080">
+<center>
+<a href="text0.html">Πρώτη σελίδα</a> <a href="text471.html">Πίσω</a> <a href="text473.html">Συνέχεια</a> <a href="text630.html">Τελευταία σελίδα</a> <a href="Case%20Study_4%20-%20Αντιγραφή%202.html">Επισκόπηση</a> <a href="img472.html">Εικόνα</a></center><br>
+<h1></h1>
+<p>Η κλάση Room (1)</p>
+<p>import java.util.Vector;</p>
+<p>import java.util.Enumeration;</p>
+<p>public abstract class Room {</p>
+<p>	public final static int SINGLE_ROOM = 1;</p>
+<p>	public final static int DOUBLE_ROOM = 2;</p>
+<p>	private Vector reservations;</p>
+<p>	private String name;</p>
+<p>	public Room(String name) {</p>
+<p>		reservations = new Vector();</p>
+<p>		this.name = name;</p>
+<p>	}</p>
+<p>	public Reservation[] getReservations() {</p>
+<p>		Object[] o = reservations.toArray();</p>
+<p>		Reservation[] r = new Reservation[o.length];</p>
+<p>		System.arraycopy(o, 0, r, 0, o.length);</p>
+<p>		return r;</p>
+<p>	}</p>
+</body>
+</html>

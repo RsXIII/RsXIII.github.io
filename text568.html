@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+     "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+<head>
+  <meta HTTP-EQUIV=CONTENT-TYPE CONTENT="text/html; charset=utf-8">
+  <title>Διαφάνεια 569</title>
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#000080" vlink="#0000CC" alink="#000080">
+<center>
+<a href="text0.html">Πρώτη σελίδα</a> <a href="text567.html">Πίσω</a> <a href="text569.html">Συνέχεια</a> <a href="text630.html">Τελευταία σελίδα</a> <a href="Case%20Study_4%20-%20Αντιγραφή%202.html">Επισκόπηση</a> <a href="img568.html">Εικόνα</a></center><br>
+<h1></h1>
+<p><i><font color="#0B001C">Αρχή Αντιστροφής των Εξαρτήσεων: Οι παρατηρητές δεν θα πρέπει να &quot;βλέπουν&quot; μία συγκεκριμένη κλάση, για αυτό και η Timer κληρονομεί μία αφηρημένη κλάση βάσης.</i></font></p>
+<p>class Subject {</p>
+<p>	private ArrayList observers = new ArrayList();</p>
+<p>	private int totalObs = 0;</p>
+<p>	public void attach( Observer o ) {</p>
+<p>	observers.add(o); //καταχώρηση παρατηρητή</p>
+<p>	}</p>
+<p>	public void detach( Observer o) {</p>
+<p>	observers.remove( o );</p>
+<p>	}</p>
+<p>	public void Notify() {</p>
+<p>		for (int i=0; i &lt; observers.size(); i++)</p>
+<p>			((Observer)observers.get(i)).update();</p>
+<p>				//ανακοίνωση αλλαγών στους παρατηρητές</p>
+<p>	}</p>
+<p>}</p>
+<p><b>Observer (Παρατηρητής)</b></p>
+</body>
+</html>

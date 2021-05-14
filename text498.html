@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+     "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+<head>
+  <meta HTTP-EQUIV=CONTENT-TYPE CONTENT="text/html; charset=utf-8">
+  <title>Διαφάνεια 499</title>
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#000080" vlink="#0000CC" alink="#000080">
+<center>
+<a href="text0.html">Πρώτη σελίδα</a> <a href="text497.html">Πίσω</a> <a href="text499.html">Συνέχεια</a> <a href="text630.html">Τελευταία σελίδα</a> <a href="Case%20Study_4%20-%20Αντιγραφή%202.html">Επισκόπηση</a> <a href="img498.html">Εικόνα</a></center><br>
+<h1></h1>
+<p><b>Square.java</b></p>
+<p><b></b></p>
+<p>public class Square extends Shape {</p>
+<p>		public Square() {</p>
+<p>				rect = new Rectangle(xTopLeft,                                                                              yTopLeft, 100, 100);</p>
+<p>		}</p>
+<p>		public void paint(Graphics g) {</p>
+<p>			super.paint(g);</p>
+<p>			Graphics2D g2 = (Graphics2D)g;</p>
+<p>			g2.setColor(lineColor);</p>
+<p>			rect.setLocation(xTopLeft, yTopLeft);</p>
+<p>			g2.draw(rect);</p>
+<p>			if(fillColor !=null) {</p>
+<p>			g2.setColor(fillColor);</p>
+<p>			g2.fillRect(xTopLeft, yTopLeft, 100, 100);</p>
+<p>			} }</p>
+<p>		public void fill(Color c) {</p>
+<p>			fillColor = c; }</p>
+<p>		public void display() {</p>
+<p>			this.setVisible(true); }</p>
+<p>		public void undisplay() {</p>
+<p>			this.setVisible(false); }</p>
+<p>		private Rectangle rect;</p>
+<p>		private Color fillColor = null;</p>
+<p>}</p>
+<p>Adapter (Προσαρμογέας)</p>
+</body>
+</html>

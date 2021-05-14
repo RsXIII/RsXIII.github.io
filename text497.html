@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+     "http://www.w3.org/TR/html4/transitional.dtd">
+<html>
+<head>
+  <meta HTTP-EQUIV=CONTENT-TYPE CONTENT="text/html; charset=utf-8">
+  <title>Διαφάνεια 498</title>
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#000080" vlink="#0000CC" alink="#000080">
+<center>
+<a href="text0.html">Πρώτη σελίδα</a> <a href="text496.html">Πίσω</a> <a href="text498.html">Συνέχεια</a> <a href="text630.html">Τελευταία σελίδα</a> <a href="Case%20Study_4%20-%20Αντιγραφή%202.html">Επισκόπηση</a> <a href="img497.html">Εικόνα</a></center><br>
+<h1></h1>
+<p><font color="#000921">Η αφηρημένη κλάση <i><b>Shape</b> </i>ορίζει την αφαίρεση ενός σχήματος ώστε να μπορεί να χρησιμοποιηθεί από προγράμματα-πελάτες. Δύο από τις μεθόδους (<u><b>setLocation</b></u> και <u><b>setLineColor</b></u>) είναι υλοποιημένες ενώ οι υπόλοιπες αφήνουν την υλοποίηση στις παράγωγες κλάσεις. (Η κλάση κληρονομεί την <i>JComponent</i></font></p>
+<p><font color="#000921">της Java έτσι ώστε να μπορεί να σχεδιαστεί σε ένα παράθυρο).</font></p>
+<p><b>Shape.java</b></p>
+<p><b></b></p>
+<p>public abstract class Shape extends JComponent {</p>
+<p>		public void setLocation(int x, int y) {</p>
+<p>			xTopLeft = x;</p>
+<p>			yTopLeft = y;</p>
+<p>		}</p>
+<p>		public void setLineColor(Color c) {</p>
+<p>			lineColor = c;</p>
+<p>		}</p>
+<p>		public abstract void display();</p>
+<p>		public abstract void undisplay();</p>
+<p>		public abstract void fill(Color c);</p>
+<p>		protected int xTopLeft = 0;</p>
+<p>		protected int yTopLeft = 0;</p>
+<p>		protected Color lineColor;</p>
+<p>}</p>
+<p>Adapter (Προσαρμογέας)</p>
+</body>
+</html>
