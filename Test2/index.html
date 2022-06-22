@@ -24,10 +24,10 @@ h2 {
 <script language="JavaScript">
 
 var answers = ["Τρεις",
-               "Σπειροειδές μοντέλο",
-			   "Είναι κατάλληλη για έργα που ΔΕΝ έχουν καλά καθορισμένες απαιτήσεις",
-			   "Το μοντέλο RUP",
-			   "Αποθετήριο (Repository)",
+               "Οι κλάσεις Φοιτητής και Καθηγητής έχουν κάποιου είδους συσχέτιση μεταξύ τους",
+			   "Υποβοηθά τη μετάβαση από τις απαιτήσεις του συστήματος στην τελική υλοποίησή του",
+			   "Όσο αυξάνει ο αριθμός των εντολών τόσο αυξάνει η πολυπλοκότητα",
+			   "(iv)",
 			   "Το κόστος απόκτησης των εργαλείων",
 			   "Για οποιοδήποτε λογισμικό το οποίο αναπτύσσεται με οποιαδήποτε μεθοδολογία",
 			   "Με την χρήση εργαλείων CASE",
@@ -81,36 +81,56 @@ window.addEventListener("load",function() { // when page loads
       <label><input type="radio" name="q1" value="Τέσσερις" />Τέσσερις </label></br>
 	  </ul>
     <hr>
-    <b>2. Σε ποιο από τα ακόλουθα μοντέλα λαμβάνεται υπόψη ο παράγοντας του ρίσκου; </b>
+    <b>2. Από το ακόλουθο τμήμα ενός διαγράμματος ακολουθίας (Sequence Diagram) συμπεραίνουμε ότι: </b> </br> <br>
+	 &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+	 &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+	 <img src="test2picture2.png" alt="Διάγραμμα Ακολουθίας" style="width:390px;height:250px;"> <br> <br>
 	  <ul class="q1-inputs" style="margin-top: 1pt">
-      <label><input type="radio" name="q2" value="Μοντέλο καταρράκτη" />Μοντέλο καταρράκτη </label></br>
-      <label><input type="radio" name="q2" value="Μοντέλο πρωτοτύπων" />Μοντέλο πρωτοτύπων</label></br>
-      <label><input type="radio" name="q2" value="Μοντέλο επαυξήσεων"/> Μοντέλο επαυξήσεων</label></br>
-      <label><input type="radio" name="q2" value="Σπειροειδές μοντέλο" />Σπειροειδές μοντέλο</label></br>
+      <label><input type="radio" name="q2" value="Η κατάθεση ΟμαδικήςΕργασίας γίνεται παράλληλα με την κατάθεση ΑτομικήςΕργασίας" />Η κατάθεση ΟμαδικήςΕργασίας γίνεται παράλληλα με την κατάθεση ΑτομικήςΕργασίας </label></br>
+      <label><input type="radio" name="q2" value="Οι κλάσεις Φοιτητής και Καθηγητής έχουν κάποιου είδους συσχέτιση μεταξύ τους" />Οι κλάσεις Φοιτητής και Καθηγητής έχουν κάποιου είδους συσχέτιση μεταξύ τους</label></br>
+      <label><input type="radio" name="q2" value="Η κλάση Φοιτητής έχει μια λειτουργία 'κατάθεσηΑτομικήςΕργασίας'"/>Η κλάση Φοιτητής έχει μια λειτουργία 'κατάθεσηΑτομικήςΕργασίας'</label></br>
+      <label><input type="radio" name="q2" value="Ο Γιαννής είναι αντικείμενο της κλάσης Φοιτητής" />Ο Γιαννής είναι αντικείμενο της κλάσης Φοιτητής</label></br>
 	  </ul>
     <hr>
-    <b>3. Τι ισχύει από τα ακόλουθα για τη διεργασία ανάπτυξης λογισμικού με την μέθοδο των πρωτοτύπων;</b>
+    <b>3. Μια αντικειμενοστρεφής μεθοδολογία ανάλυσης και σχεδίασης (όπως η μεθοδολογία RUP):</b>
 	  <ul class="q1-inputs" style="margin-top: 1pt">
-      <label><input type="radio" name="q3" value="Είναι κατάλληλη για έργα που υλοποιούνται από μεγάλες ομάδες ανάπτυξης" />Είναι κατάλληλη για έργα που υλοποιούνται από μεγάλες ομάδες ανάπτυξης</label></br>
-      <label><input type="radio" name="q3" value="Είναι κατάλληλη για έργα που ΔΕΝ έχουν καλά καθορισμένες απαιτήσεις" />Είναι κατάλληλη για έργα που ΔΕΝ έχουν καλά καθορισμένες απαιτήσεις</label></br>
-      <label><input type="radio" name="q3" value="Είναι κατάλληλη για έργα που έχουν καλά καθορισμένες απαιτήσεις"/>Είναι κατάλληλη για έργα που έχουν καλά καθορισμένες απαιτήσεις</label></br>
-      <label><input type="radio" name="q3" value="Κανένα από τα παραπάνω" />Κανένα από τα παραπάνω</label></br>
+      <label><input type="radio" name="q3" value="Επιπτρέπει την αυτόματη παραγωγή κώδικα από τις απαιτήσεις του συστήματος" />Επιπτρέπει την αυτόματη παραγωγή κώδικα από τις απαιτήσεις του συστήματος</label></br>
+      <label><input type="radio" name="q3" value="Εξασφαλίζει ότι δε θα εισαχθούν λάθη στο λογισμικό" />Εξασφαλίζει ότι δε θα εισαχθούν λάθη στο λογισμικό</label></br>
+      <label><input type="radio" name="q3" value="Εξασφαλίζει τη μετατροπή διαδικασιακού κώδικα σε αντικειμενοστρεφή"/>Εξασφαλίζει τη μετατροπή διαδικασιακού κώδικα σε αντικειμενοστρεφή</label></br>
+      <label><input type="radio" name="q3" value="Υποβοηθά τη μετάβαση από τις απαιτήσεις του συστήματος στην τελική υλοποίησή του" />Υποβοηθά τη μετάβαση από τις απαιτήσεις του συστήματος στην τελική υλοποίησή του</label></br>
 	  </ul>
 	<hr>
-	<b>4. Ποιο από τα ακόλουθα μοντέλα υποστηρίζει τη διαδικασία προδιαγραφής των απαιτήσεων;</b>
+	<b>4. Η κυκλωματική πολυπλοκότητα (McCabe) βασίζεται στην αντίληψη ότι:</b>
 	  <ul class="q1-inputs" style="margin-top: 1pt">
-      <label><input type="radio" name="q4" value="Τα εξελικτικά μοντέλα" />Τα εξελικτικά μοντέλα</label></br>
-      <label><input type="radio" name="q4" value="Το μοντέλο καταρράκτη" />Το μοντέλο καταρράκτη</label></br>
-      <label><input type="radio" name="q4" value="Το μοντέλο RUP"/>Το μοντέλο RUP</label></br>
-      <label><input type="radio" name="q4" value="Το πρώτο και το τρίτο" />Το πρώτο και το τρίτο</label></br>
+      <label><input type="radio" name="q4" value="Όσο αυξάνει ο αριθμός των συναρτήσεων τόσο αυξάνει η πολυπλοκότητα" />Όσο αυξάνει ο αριθμός των συναρτήσεων τόσο αυξάνει η πολυπλοκότητα</label></br>
+      <label><input type="radio" name="q4" value="Όσο αυξάνει ο αριθμός των κλάσεων τόσο αυξάνει η πολυπλοκότητα" />Όσο αυξάνει ο αριθμός των κλάσεων τόσο αυξάνει η πολυπλοκότητα</label></br>
+      <label><input type="radio" name="q4" value="Όσο αυξάνει ο αριθμός των ελέγχων τόσο αυξάνει η πολυπλοκότητα"/>Όσο αυξάνει ο αριθμός των ελέγχων τόσο αυξάνει η πολυπλοκότητα</label></br>
+      <label><input type="radio" name="q4" value="Όσο αυξάνει ο αριθμός των εντολών τόσο αυξάνει η πολυπλοκότητα" />Όσο αυξάνει ο αριθμός των εντολών τόσο αυξάνει η πολυπλοκότητα</label></br>
 	  </ul>
     <hr>
-	<b>5.Ποιο εργαλείο CASE αποθηκεύει όλες τις αλλαγές και τις πληροφορίες υλοποίησης ενός έργου λογισμικού από την έναρξή του έως και την συντήρησή του;</b>
+	<b>5. Ποιό από τα διαγράμματα κλάσεων UML που δίνονται στη συνέχεια αποτυπώνει ορθότερα τον κάτωθι κώδικα Java</b>
 	  <ul class="q1-inputs" style="margin-top: 1pt">
-      <label><input type="radio" name="q5" value="Βάση δεδομένων" />Βάση δεδομένων</label></br>
-      <label><input type="radio" name="q5" value="Αποθετήριο (Repository)" />Αποθετήριο (Repository)</label></br>
-      <label><input type="radio" name="q5" value="Καταχωρητές"/>Καταχωρητές</label></br>
-      <label><input type="radio" name="q5" value="Κανένα από τα παραπάνω" />Κανένα από τα παραπάνω</label></br>
+	  <img src="test2picture3.1.png" alt="Διάγραμμα Κλάσεων" style="width:390px;height:250px;"> 
+	  <img src="test2picture3.2.png" alt="Διάγραμμα Κλάσεων" style="width:390px;height:250px;"> </br>
+      <label><input type="radio" name="q5" value="(i)" />(i)</label> 
+      &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;<label><input type="radio" name="q5" value="(ii)" />(ii)</label> </br>
+	  <img src="test2picture3.3.png" alt="Διάγραμμα Κλάσεων" style="width:390px;height:250px;"> 
+	  <img src="test2picture3.4.png" alt="Διάγραμμα Κλάσεων" style="width:390px;height:250px;"> </br>
+      <label><input type="radio" name="q5" value="(iii)"/>(iii)</label>
+	  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;
+      <label><input type="radio" name="q5" value="(iv)" />(iv)</label> </br>
 	  </ul>
     <hr>
 	<b>6.Ποιο από τα ακόλουθα αποτελεί μειονέκτημα των εργαλείων CASE;</b>
