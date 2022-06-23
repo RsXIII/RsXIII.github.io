@@ -30,10 +30,10 @@ var answers = ["(i)",
 			   "Η πολλαπλότητα δεν έχει νόημα",
 			   "Eνα διακριτό τμήμα της συνολικής λειτουργικότητας ενός συστήματος που μπορεί να επιφέρει κάποιο αποτέλεσμα που έχει αξία για τον χρήστη",
 			   "(iii)",
-			   "(iii)",
-			   "Ένας εγγεγραμμένος χρήστης μπορεί να τροποποιήσει ένα πρόγραμμα",
 			   "(i)",
-			   "(i)",];
+			   "Ένα Μάθημα μπορούν να το παρακολουθούν από 0 μέχρι 25 φοιτητές",
+			   "Βελτίωση της ποιότητας",
+			        ];
 var rads, quiz; // need to be set after load
 window.addEventListener("load",function() { // when page loads
   quiz = document.getElementById("quiz");
@@ -150,7 +150,7 @@ window.addEventListener("load",function() { // when page loads
       <label><input type="radio" name="q6" value="Eνα διακριτό τμήμα της συνολικής λειτουργικότητας ενός συστήματος που μπορεί να επιφέρει κάποιο αποτέλεσμα που έχει αξία για τον χρήστη" />Eνα διακριτό τμήμα της συνολικής λειτουργικότητας ενός συστήματος που μπορεί να επιφέρει κάποιο αποτέλεσμα που έχει αξία για τον χρήστη</label></br>
 	  </ul>
     <hr>
-    <b>7. Σε ένα διάγραμμα περιπτώσεων χρήσης (use case diagram) ενός συστήματος ηλεκτρονικών αγορών, μια περίπτωση χρήσης "Αποστολή στο Εξωτερικό" εκτελείται στα πλαίσια της περίπτωσης χρήσης "Αγορά Προϊόντος" μόνο όταν ο πελάτης δηλώσει διεύθυνση αποστολής εκτός Ελλάδος. Η ενδεδειγμένη γραφική αναπαράσταση είναι::</b>
+    <b>7. Σε ένα διάγραμμα περιπτώσεων χρήσης (use case diagram) ενός συστήματος ηλεκτρονικών αγορών, μια περίπτωση χρήσης "Αποστολή στο Εξωτερικό" εκτελείται στα πλαίσια της περίπτωσης χρήσης "Αγορά Προϊόντος" μόνο όταν ο πελάτης δηλώσει διεύθυνση αποστολής εκτός Ελλάδος. Η ενδεδειγμένη γραφική αναπαράσταση είναι::</b> </br> <br>
 	  <ul class="q1-inputs" style="margin-top: 1pt">
        <img src="test3picture4.1.png" alt="" style="width:390px;height:250px;"> 
 	  <img src="test3picture4.2.png" alt="" style="width:390px;height:250px;"> </br>
@@ -175,65 +175,17 @@ window.addEventListener("load",function() { // when page loads
 	  &nbsp;&nbsp;&nbsp;
       <label><input type="radio" name="q7" value="(iv)" />(iv)</label> </br>
     <hr>
-	<b>8. Η κρίση λογισμικού αφορά:</b>
-	  <ul class="q1-inputs" style="margin-top: 1pt">
-      <label><input type="radio" name="q8" value="Την έλλειψη αρκετών γλώσσών προγραμματισμού" />Την έλλειψη αρκετών γλώσσών προγραμματισμού</label></br>
-      <label><input type="radio" name="q8" value="Την ανεπάρκεια προγραμματιστών" />Την ανεπάρκεια προγραμματιστών</label></br>
-      <label><input type="radio" name="q8" value="Την υπέρβαση χρόνου και προϋπολογισμού σε πολλά μεγάλα έργα λογισμικού"/>Την υπέρβαση χρόνου και προϋπολογισμού σε πολλά μεγάλα έργα λογισμικού</label></br>
-      <label><input type="radio" name="q8" value="Τα φιλοσοφικά ζητήματα από τη χρήση λογισμικού" />Τα φιλοσοφικά ζητήματα από τη χρήση λογισμικού</label></br>
-	  </ul>
-    <hr>
-	<b>9. Από το τμήμα του διαγράμματος περιπτώσεων χρήσης που δίνεται παρακάτω, προκύπτει ότι:</b> </br> <br>
-	  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-	  <img src="test2picture5.png" alt=" " style="width:300px;height:300px;">  </br> <br>
-	  <ul class="q1-inputs" style="margin-top: 1pt">
-      <label><input type="radio" name="q9" value="Οποιοσδήποτε χρήστης μπορεί να προσθέσει ένα νέο πρόγραμμα" />Οποιοσδήποτε χρήστης μπορεί να προσθέσει ένα νέο πρόγραμμα</label></br>
-      <label><input type="radio" name="q9" value="Ένας εγγεγραμμένος χρήστης μπορεί να τροποποιήσει ένα πρόγραμμα" />Ένας εγγεγραμμένος χρήστης μπορεί να τροποποιήσει ένα πρόγραμμα</label></br>
-      <label><input type="radio" name="q9" value="Ο εγγεγραμμένος χρήστης μπορεί να καλέσει έναν απλό χρήστη"/>Ο εγγεγραμμένος χρήστης μπορεί να καλέσει έναν απλό χρήστη</label></br>
-      <label><input type="radio" name="q9" value="Ο απλός χρήστης αποτελεί ειδικότερη κατηγορία εγγεγραμμένου χρήστη" />Ο απλός χρήστης αποτελεί ειδικότερη κατηγορία εγγεγραμμένου χρήστη</label></br>
-	  </ul>
-    <hr>
-	 <b>10. Στο διάγραμμα ακολουθίας (ενός υποθετικού συστήματος) που δίνεται παρακάτω, ποιό διάγραμμα κλάσεων αντιστοιχεί;</b> </br> <br>
-	   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
-	 &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-	  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
-	 &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-	  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
-	 &nbsp;&nbsp;&nbsp;&nbsp;
-	  <img src="test2picture6.png" alt="" style="width:390px;height:350px;">  </br> <br>
-	  <ul class="q1-inputs" style="margin-top: 1pt">
-	  <img src="test2picture6.1.png" alt="Διάγραμμα Ακολουθίας" style="width:390px;height:250px;"> 
-	  <img src="test2picture6.2.png" alt="Διάγραμμα Ακολουθίας" style="width:390px;height:250px;"> </br>
-      <label><input type="radio" name="q10" value="(i)" />(i)</label> 
-      &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	
+	<b>8. Για τον κώδικα που δίνεται στη συνέχεια, ποιός είναι ο αντίστοιχος Γράφος Ροής Ελέγχου (Control Flow Graph);</b> </br> <br>
+	   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	  &nbsp;&nbsp;&nbsp;
-	  <label><input type="radio" name="q10" value="(ii)" />(ii)</label> </br>
-	  <img src="test2picture6.3.png" alt="Διάγραμμα Ακολουθίας" style="width:390px;height:250px;"> 
-	  <img src="test2picture6.4.png" alt="Διάγραμμα Ακολουθίας" style="width:390px;height:250px;"> </br>
-      <label><input type="radio" name="q10" value="(iii)"/>(iii)</label>
-	  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	  &nbsp;&nbsp;&nbsp;
-      <label><input type="radio" name="q10" value="(iv)" />(iv)</label> </br>
-	  </ul>
-    <hr>
-	<b>11. Δίνεται η κάτωθι περιγραφή απαιτήσεων υψηλού επιπέδου για ένα υποθετικό σύστημα ταξιδιωτικού γραφείου. Ποιό από τα παρακάτω διαγράμματα περιπτώσεων χρήσης είναι το σωστό;</b> </br> <br>
-	   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
 	 
-	  <img src="test2picture7.png" alt="" style="width:690px;height:140px;">  </br> <br>
+	   <img src="test3picture5.png" alt="" style="width:490px;height:220px;">  </br> <br>
 	  <ul class="q1-inputs" style="margin-top: 1pt">
-	  <img src="test2picture7.1.png" alt="Διάγραμμα Ακολουθίας" style="width:390px;height:290px;"> 
-	  <img src="test2picture7.2.png" alt="Διάγραμμα Ακολουθίας" style="width:390px;height:290px;"> </br>
-      <label><input type="radio" name="q11" value="(i)" />(i)</label> 
+         <img src="test3picture5.1.png" alt="" style="width:390px;height:250px;"> 
+	  <img src="test3picture5.2.png" alt="" style="width:390px;height:250px;"> </br>
+      <label><input type="radio" name="q8" value="(i)" />(i)</label> 
       &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -241,10 +193,10 @@ window.addEventListener("load",function() { // when page loads
 	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	  &nbsp;&nbsp;&nbsp;
-	  <label><input type="radio" name="q11" value="(ii)" />(ii)</label> </br>
-	  <img src="test2picture7.3.png" alt="Διάγραμμα Ακολουθίας" style="width:390px;height:290px;"> 
-	  <img src="test2picture7.4.png" alt="Διάγραμμα Ακολουθίας" style="width:390px;height:290px;"> </br>
-      <label><input type="radio" name="q11" value="(iii)"/>(iii)</label>
+	  <label><input type="radio" name="q8" value="(ii)" />(ii)</label> </br> </br>
+	  <img src="test3picture5.3.png" alt="" style="width:390px;height:250px;"> 
+	  <img src="test3picture5.4.png" alt="" style="width:390px;height:250px;"> </br>
+      <label><input type="radio" name="q8" value="(iii)"/>(iii)</label>
 	  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -252,7 +204,27 @@ window.addEventListener("load",function() { // when page loads
 	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	  &nbsp;&nbsp;&nbsp;
-      <label><input type="radio" name="q11" value="(iv)" />(iv)</label> </br>
+      <label><input type="radio" name="q8" value="(iv)" />(iv)</label> </br>
+    <hr>
+	
+	<b>9. Ποιά από τις ακόλουθες φράσεις περιγράφει καλύτερα το παρακάτω διάγραμμα κλάσεων:</b> </br> <br>
+	  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+	  <img src="test3picture6.png" alt=" " style="width:300px;height:150px;">  </br> <br>
+	  <ul class="q1-inputs" style="margin-top: 1pt">
+      <label><input type="radio" name="q9" value="Ένας Φοιτητής παρακολουθεί από 0 μέχρι 25 Μαθήματα" />Ένας Φοιτητής παρακολουθεί από 0 μέχρι 25 Μαθήματα</label></br>
+      <label><input type="radio" name="q9" value="Ένας Φοιτητής παρακολουθεί υποχρεωτικά 25 Μαθήματα" />Ένας Φοιτητής παρακολουθεί υποχρεωτικά 25 Μαθήματα</label></br>
+      <label><input type="radio" name="q9" value="Ένας Φοιτητής πρέπει υποχρεωτικά να παρακολουθεί ένα μάθημα"/>Ένας Φοιτητής πρέπει υποχρεωτικά να παρακολουθεί ένα μάθημα</label></br>
+      <label><input type="radio" name="q9" value="Ένα Μάθημα μπορούν να το παρακολουθούν από 0 μέχρι 25 φοιτητές" />Ένα Μάθημα μπορούν να το παρακολουθούν από 0 μέχρι 25 φοιτητές</label></br>
+	  </ul>
+    <hr>
+	 <b>10. Οι επισκοπήσεις (inspections) στην ανάπτυξη λογισμικού χρησιμοποιούνται για:</b> 
+	   
+	  <ul class="q1-inputs" style="margin-top: 1pt">
+      <label><input type="radio" name="q10" value="Μέτρηση της απόδοσης των προγραμματιστών" />Μέτρηση της απόδοσης των προγραμματιστών</label> 
+	  <label><input type="radio" name="q10" value="Βελτίωση της ποιότητας" />Βελτίωση της ποιότητας</label> </br>
+      <label><input type="radio" name="q10" value="Εντοπισμό 'κακών' προγραμματιστών"/>Εντοπισμό 'κακών' προγραμματιστών</label>
+      <label><input type="radio" name="q10" value="Συζήτηση των λαθών" />Συζήτηση των λαθών</label> </br>
+	  </ul>
     <hr>
     <p>
       <input type="button" value="Καταχώρηση Απαντήσεων" id="scoreButton">
