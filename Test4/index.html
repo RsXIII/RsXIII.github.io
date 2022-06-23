@@ -1,0 +1,273 @@
+<html lang="el" xml:lang="el" xmlns="http://www.w3.org/1999/xhtml">
+
+
+
+<HEAD>
+
+<style>
+body {
+  background-color: linen;
+}
+
+h2 {
+  color: maroon;
+}  	
+.correct {
+  color: green
+}
+
+.error {
+  color: red
+}
+</style>
+
+<script language="JavaScript">
+
+var answers = ["(i)",
+               "Η αποσύνθεση του συστήματος σε μονάδες και ο καθορισμός των σχέσεων μεταξύ τους",
+			   "Υποβοηθά τη μετάβαση από τις απαιτήσεις του συστήματος στην τελική υλοποίησή του",
+			   "Υπάρχει απώλεια της συνέχειας στη ροή του ελέγχου μεταξύ δύο μηνυμάτων",
+			   "(iv)",
+			   "3",
+			   "Διαφέρει σε αρκετές πτυχές από άλλες τεχνικές δραστηριότητες",
+			   "Την υπέρβαση χρόνου και προϋπολογισμού σε πολλά μεγάλα έργα λογισμικού",
+			   "Ένας εγγεγραμμένος χρήστης μπορεί να τροποποιήσει ένα πρόγραμμα",
+			   "(i)",
+			   "(i)",];
+var rads, quiz; // need to be set after load
+window.addEventListener("load",function() { // when page loads
+  quiz = document.getElementById("quiz");
+  rads = quiz.querySelectorAll("input[type=radio]"); // all radios in the quiz
+  document.getElementById("scoreButton").addEventListener("click",function(e) { // on click of scoreme
+    var score = 0;
+    for (var i=0;i<rads.length;i++) { // loop over all radios in the form
+      var rad = rads[i];
+      var idx = rad.name.substring(1)-1; //remove the q from the name - JS arrays start at 0
+      var checked = rad.checked;
+      var correct = rad.value==answers[idx];
+      
+      if (correct) {
+        rad.closest("label").classList.toggle("correct");
+        if (checked) score +=4;
+      }  
+      else if (checked) {
+        
+        rad.closest("label").classList.toggle("error")
+      }  
+    }
+    var scoreper = Math.round(score/rads.length*100);
+    document.querySelector("#percentage").innerHTML = scoreper + "%";
+    quiz.mark.value = score;
+  });  
+});
+</script>
+</HEAD>
+
+<body>
+<title>ΤΕΣΤ Τεχνολογία Λογισμικού</title>
+<div class="header">
+  <h1>ΤΕΧΝΟΛΟΓΙΑ ΛΟΓΙΣΜΙΚΟΥ</h1>
+  <h2><u>3ο ΤΕΣΤ</u></h2>
+</div>
+<form id="quiz">
+  <div class="questions">
+    
+      <b>1. Ποιό από τα ακόλουθα διαγράμματα κλάσεων αποτυπώνει καλύτερα την αρχιτεκτονική σχεδίαση του κώδικα που δίνεται (το σώμα των μεθόδων είναι σκοπίμως κενό - δεν απαιτείται για τη σχεδίαση του διαγράμματος κλάσεων).</b> </br> <br>
+	  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <img src="test3picture1.png" alt="" style="width:450px;height:400px;"> <br> <br>
+
+	  <ul class="q1-inputs" style="margin-top: 1pt">
+	  <img src="test3picture1.1.png" alt="" style="width:390px;height:250px;"> 
+	  <img src="test3picture1.2.png" alt="" style="width:390px;height:250px;"> </br>
+      <label><input type="radio" name="q1" value="(i)" />(i)</label> 
+      &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;
+	  <label><input type="radio" name="q1" value="(ii)" />(ii)</label> </br> </br>
+	  <img src="test3picture1.3.png" alt="" style="width:390px;height:250px;"> 
+	  <img src="test3picture1.4.png" alt="" style="width:390px;height:250px;"> </br>
+      <label><input type="radio" name="q1" value="(iii)"/>(iii)</label>
+	  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;
+      <label><input type="radio" name="q1" value="(iv)" />(iv)</label> </br>
+    <hr>
+	
+    <b>2. Βασικός στόχος στη φάση της σχεδίασης λογισμικού είναι: </b> 
+
+	  <ul class="q1-inputs" style="margin-top: 1pt">
+      <label><input type="radio" name="q2" value="Η τεκμηρίωση των απαιτήσεων του χρήστη" />Η τεκμηρίωση των απαιτήσεων του χρήστη</label></br>
+      <label><input type="radio" name="q2" value="Η υλοποίηση του κώδικα" />Η υλοποίηση του κώδικα</label></br>
+      <label><input type="radio" name="q2" value="Ο έλεγχος του λογισμικού"/>Ο έλεγχος του λογισμικού</label></br>
+      <label><input type="radio" name="q2" value="Η αποσύνθεση του συστήματος σε μονάδες και ο καθορισμός των σχέσεων μεταξύ τους" />Η αποσύνθεση του συστήματος σε μονάδες και ο καθορισμός των σχέσεων μεταξύ τους</label></br>
+	  </ul>
+    <hr>
+    <b>3. Ποιό είναι το σφάλμα στο παρακάτω διάγραμμα ακολουθίας ενός υποθετικού συστήματος;</b> </br> <br>
+      &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+	  <img src="test3picture2.png" alt="" style="width:390px;height:300px;">  </br> <br>
+	  <ul class="q1-inputs" style="margin-top: 1pt">
+      <label><input type="radio" name="q3" value="Ο χρήστης δεν μπορεί να εισάγει user name και password σε ένα βήμα (μία ακμή)" />Ο χρήστης δεν μπορεί να εισάγει user name και password σε ένα βήμα (μία ακμή)</label></br>
+      <label><input type="radio" name="q3" value="Δεν μπορούν να υπάρχουν μηνύματα με κατεύθυνση από δεξιά προς αριστερά όπως αυτό με τη διακεκομμένη γραμμή" />Δεν μπορούν να υπάρχουν μηνύματα με κατεύθυνση από δεξιά προς αριστερά όπως αυτό με τη διακεκομμένη γραμμή</label></br>
+      <label><input type="radio" name="q3" value="Υπάρχει απώλεια της συνέχειας στη ροή του ελέγχου μεταξύ δύο μηνυμάτων"/>Υπάρχει απώλεια της συνέχειας στη ροή του ελέγχου μεταξύ δύο μηνυμάτων</label></br>
+      <label><input type="radio" name="q3" value="Το μήνυμα 3 δεν μπορεί να ξεκινά και να καταλήγει στην ίδια γραμμή ζωής (γραμμή που εκτείνεται κάτω από κάθε αντικείμενο)" />Το μήνυμα 3 δεν μπορεί να ξεκινά και να καταλήγει στην ίδια γραμμή ζωής (γραμμή που εκτείνεται κάτω από κάθε αντικείμενο)</label></br>
+	  </ul>
+	<hr>
+	<b>4. Η κυκλωματική πολυπλοκότητα (McCabe) βασίζεται στην αντίληψη ότι:</b>
+	  <ul class="q1-inputs" style="margin-top: 1pt">
+      <label><input type="radio" name="q4" value="Όσο αυξάνει ο αριθμός των συναρτήσεων τόσο αυξάνει η πολυπλοκότητα" />Όσο αυξάνει ο αριθμός των συναρτήσεων τόσο αυξάνει η πολυπλοκότητα</label></br>
+      <label><input type="radio" name="q4" value="Όσο αυξάνει ο αριθμός των κλάσεων τόσο αυξάνει η πολυπλοκότητα" />Όσο αυξάνει ο αριθμός των κλάσεων τόσο αυξάνει η πολυπλοκότητα</label></br>
+      <label><input type="radio" name="q4" value="Όσο αυξάνει ο αριθμός των ελέγχων τόσο αυξάνει η πολυπλοκότητα"/>Όσο αυξάνει ο αριθμός των ελέγχων τόσο αυξάνει η πολυπλοκότητα</label></br>
+      <label><input type="radio" name="q4" value="Όσο αυξάνει ο αριθμός των εντολών τόσο αυξάνει η πολυπλοκότητα" />Όσο αυξάνει ο αριθμός των εντολών τόσο αυξάνει η πολυπλοκότητα</label></br>
+	  </ul>
+    <hr>
+	<b>5. Ποιό από τα διαγράμματα κλάσεων UML που δίνονται στη συνέχεια αποτυπώνει ορθότερα τον κάτωθι κώδικα Java</b> </br> <br>
+	   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+	 &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+	 &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+	 &nbsp;&nbsp;&nbsp;&nbsp;
+	  <img src="test2picture3.png" alt="Κώδικας Java" style="width:390px;height:350px;">  </br> <br>
+	  <ul class="q1-inputs" style="margin-top: 1pt">
+	  <img src="test2picture3.1.png" alt="Διάγραμμα Κλάσεων" style="width:390px;height:250px;"> 
+	  <img src="test2picture3.2.png" alt="Διάγραμμα Κλάσεων" style="width:390px;height:250px;"> </br>
+      <label><input type="radio" name="q5" value="(i)" />(i)</label> 
+      &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;
+	  <label><input type="radio" name="q5" value="(ii)" />(ii)</label> </br>
+	  <img src="test2picture3.3.png" alt="Διάγραμμα Κλάσεων" style="width:390px;height:250px;"> 
+	  <img src="test2picture3.4.png" alt="Διάγραμμα Κλάσεων" style="width:390px;height:250px;"> </br>
+      <label><input type="radio" name="q5" value="(iii)"/>(iii)</label>
+	  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;
+      <label><input type="radio" name="q5" value="(iv)" />(iv)</label> </br>
+	  </ul>
+    <hr>
+	<b>6. Ποιά είναι η τιμή της κυκλωματικής πολυπλοκότητας για το τμήμα κώδικα που ακολουθεί;</b> </br> <br>
+	  <ul class="q1-inputs" style="margin-top: 1pt">
+	  <img src="test2picture4.png" alt=" " style="width:590px;height:580px;">  </br> <br>
+      <label><input type="radio" name="q6" value="1" />1</label></br>
+      <label><input type="radio" name="q6" value="2" />2</label></br>
+      <label><input type="radio" name="q6" value="3"/>3</label></br>
+      <label><input type="radio" name="q6" value="4" />4</label></br>
+	  </ul>
+    <hr>
+    <b>7. Η ανάπτυξη έργων λογισμικού:</b>
+	  <ul class="q1-inputs" style="margin-top: 1pt">
+      <label><input type="radio" name="q7" value="Διευκολύνεται από το γεγονός ότι στα προϊόντα λογισμικού η ποιότητα μπορεί να οριστεί πολύ εύκολα" />Διευκολύνεται από το γεγονός ότι στα προϊόντα λογισμικού η ποιότητα μπορεί να οριστεί πολύ εύκολα</label></br>
+      <label><input type="radio" name="q7" value="Στηρίζεται σε μεγαλύτερο βαθμό σε τεχνικούς πόρους (μηχανήματα) παρά σε ανθρώπινους πόρους" />Στηρίζεται σε μεγαλύτερο βαθμό σε τεχνικούς πόρους (μηχανήματα) παρά σε ανθρώπινους πόρους</label></br>
+      <label><input type="radio" name="q7" value="Δεν απαιτεί διαχείριση των σχετικών έργων (project management)"/>Δεν απαιτεί διαχείριση των σχετικών έργων (project management)</label></br>
+      <label><input type="radio" name="q7" value="Διαφέρει σε αρκετές πτυχές από άλλες τεχνικές δραστηριότητες" />Διαφέρει σε αρκετές πτυχές από άλλες τεχνικές δραστηριότητες</label></br>
+	  </ul>
+    <hr>
+	<b>8. Η κρίση λογισμικού αφορά:</b>
+	  <ul class="q1-inputs" style="margin-top: 1pt">
+      <label><input type="radio" name="q8" value="Την έλλειψη αρκετών γλώσσών προγραμματισμού" />Την έλλειψη αρκετών γλώσσών προγραμματισμού</label></br>
+      <label><input type="radio" name="q8" value="Την ανεπάρκεια προγραμματιστών" />Την ανεπάρκεια προγραμματιστών</label></br>
+      <label><input type="radio" name="q8" value="Την υπέρβαση χρόνου και προϋπολογισμού σε πολλά μεγάλα έργα λογισμικού"/>Την υπέρβαση χρόνου και προϋπολογισμού σε πολλά μεγάλα έργα λογισμικού</label></br>
+      <label><input type="radio" name="q8" value="Τα φιλοσοφικά ζητήματα από τη χρήση λογισμικού" />Τα φιλοσοφικά ζητήματα από τη χρήση λογισμικού</label></br>
+	  </ul>
+    <hr>
+	<b>9. Από το τμήμα του διαγράμματος περιπτώσεων χρήσης που δίνεται παρακάτω, προκύπτει ότι:</b> </br> <br>
+	  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+	  <img src="test2picture5.png" alt=" " style="width:300px;height:300px;">  </br> <br>
+	  <ul class="q1-inputs" style="margin-top: 1pt">
+      <label><input type="radio" name="q9" value="Οποιοσδήποτε χρήστης μπορεί να προσθέσει ένα νέο πρόγραμμα" />Οποιοσδήποτε χρήστης μπορεί να προσθέσει ένα νέο πρόγραμμα</label></br>
+      <label><input type="radio" name="q9" value="Ένας εγγεγραμμένος χρήστης μπορεί να τροποποιήσει ένα πρόγραμμα" />Ένας εγγεγραμμένος χρήστης μπορεί να τροποποιήσει ένα πρόγραμμα</label></br>
+      <label><input type="radio" name="q9" value="Ο εγγεγραμμένος χρήστης μπορεί να καλέσει έναν απλό χρήστη"/>Ο εγγεγραμμένος χρήστης μπορεί να καλέσει έναν απλό χρήστη</label></br>
+      <label><input type="radio" name="q9" value="Ο απλός χρήστης αποτελεί ειδικότερη κατηγορία εγγεγραμμένου χρήστη" />Ο απλός χρήστης αποτελεί ειδικότερη κατηγορία εγγεγραμμένου χρήστη</label></br>
+	  </ul>
+    <hr>
+	 <b>10. Στο διάγραμμα ακολουθίας (ενός υποθετικού συστήματος) που δίνεται παρακάτω, ποιό διάγραμμα κλάσεων αντιστοιχεί;</b> </br> <br>
+	   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+	 &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+	 &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+	 &nbsp;&nbsp;&nbsp;&nbsp;
+	  <img src="test2picture6.png" alt="" style="width:390px;height:350px;">  </br> <br>
+	  <ul class="q1-inputs" style="margin-top: 1pt">
+	  <img src="test2picture6.1.png" alt="Διάγραμμα Ακολουθίας" style="width:390px;height:250px;"> 
+	  <img src="test2picture6.2.png" alt="Διάγραμμα Ακολουθίας" style="width:390px;height:250px;"> </br>
+      <label><input type="radio" name="q10" value="(i)" />(i)</label> 
+      &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;
+	  <label><input type="radio" name="q10" value="(ii)" />(ii)</label> </br>
+	  <img src="test2picture6.3.png" alt="Διάγραμμα Ακολουθίας" style="width:390px;height:250px;"> 
+	  <img src="test2picture6.4.png" alt="Διάγραμμα Ακολουθίας" style="width:390px;height:250px;"> </br>
+      <label><input type="radio" name="q10" value="(iii)"/>(iii)</label>
+	  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;
+      <label><input type="radio" name="q10" value="(iv)" />(iv)</label> </br>
+	  </ul>
+    <hr>
+	<b>11. Δίνεται η κάτωθι περιγραφή απαιτήσεων υψηλού επιπέδου για ένα υποθετικό σύστημα ταξιδιωτικού γραφείου. Ποιό από τα παρακάτω διαγράμματα περιπτώσεων χρήσης είναι το σωστό;</b> </br> <br>
+	   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+	 
+	  <img src="test2picture7.png" alt="" style="width:690px;height:140px;">  </br> <br>
+	  <ul class="q1-inputs" style="margin-top: 1pt">
+	  <img src="test2picture7.1.png" alt="Διάγραμμα Ακολουθίας" style="width:390px;height:290px;"> 
+	  <img src="test2picture7.2.png" alt="Διάγραμμα Ακολουθίας" style="width:390px;height:290px;"> </br>
+      <label><input type="radio" name="q11" value="(i)" />(i)</label> 
+      &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;
+	  <label><input type="radio" name="q11" value="(ii)" />(ii)</label> </br>
+	  <img src="test2picture7.3.png" alt="Διάγραμμα Ακολουθίας" style="width:390px;height:290px;"> 
+	  <img src="test2picture7.4.png" alt="Διάγραμμα Ακολουθίας" style="width:390px;height:290px;"> </br>
+      <label><input type="radio" name="q11" value="(iii)"/>(iii)</label>
+	  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  &nbsp;&nbsp;&nbsp;
+      <label><input type="radio" name="q11" value="(iv)" />(iv)</label> </br>
+    <hr>
+    <p>
+      <input type="button" value="Καταχώρηση Απαντήσεων" id="scoreButton">
+      <input type="reset" value="Καθαρισμός Επιλογών"><br/> 
+      <p> <strong> <h3> Αποτέλεσμα = <span id="percentage"></span> </strong> </h3> </p>
+	  
+    <p>
+  </div>
+</form>
+</body>
+
+</html>
